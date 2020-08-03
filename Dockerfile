@@ -8,7 +8,7 @@ RUN apt-get install -y git-all vim htop
 
 WORKDIR /root/
 
-RUN git clone https://github.com/tyliupku/wiki2bio.git
+RUN git clone https://github.com/sunhch/wiki2bio.git
 
 WORKDIR /root/wiki2bio/
 
@@ -18,8 +18,7 @@ RUN gdown --id 15AV8LeWY3nzCKb8RRbM8kwHAp_DUZ5gf -O original_data.zip
 RUN unzip -o original_data.zip
 RUN rm original_data.zip
 
-RUN pip install nltk==3.0
+RUN pip install nltk==3.4.5
 RUN python -m nltk.downloader all
 
 RUN mkdir /root/log/
-COPY ./test.py /root/wiki2bio/
